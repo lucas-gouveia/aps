@@ -63,6 +63,11 @@ module.exports = {
         type: DataTypes.BOOLEAN,
         defaultValue: false
       },
+      acept: {
+        allowNull: false,
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
       colector_id: {
         allowNull: true,
         type: DataTypes.INTEGER,

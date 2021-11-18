@@ -6,7 +6,8 @@ import { login } from './app/controller/loginController'
 import { verifyToken } from './app/controller/verifyToken'
 import { createColect } from './app/controller/colectController'
 import { cancelColect } from './app/controller/cancel-colectController'
-// import auth from './app/controller/verifyToken'
+import { aceptColect } from './app/controller/acept-colectController'
+import { concluseColect } from './app/controller/consluse-colectController'
 
 const app = express();
 
@@ -21,14 +22,8 @@ app.post('/register', createUser)
 app.post('/login', login)
 app.post('/colect', verifyToken, createColect)
 app.post('/cancel', verifyToken, cancelColect)
-
-// app.post('/colect', verifyToken, (req, res) => {
-//   res.json({ message: '200' })
-// })
-// app.get('/all', verifyToken, (req, res) => {
-//   console.log(req.userId)
-//   res.json({ message: 'token autenticado' })
-// })
+app.post('/acept', verifyToken, aceptColect)
+app.post('/concluse', verifyToken, concluseColect)
 
 console.log('Running on port', process.env.PORT)
 

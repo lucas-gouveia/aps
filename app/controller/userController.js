@@ -9,12 +9,12 @@ export const createUser = async (req, res) => {
     if (user.name == '' || user.email == '' || user.password == '') {
       return res.status(400).json({ message: 'Campo inválido!' })
     }
-    const usuario = await User.create({
+    await User.create({
       name: user.name,
       email: user.email,
       password: passwordWithEncrypt
     })
-    return res.json(usuario);
+    return res.json({ message: 'Usuário Cadastrado!' });
   } catch (error) {
     console.log(error)
     return res.status(500).json({message: 'Erro ao registrar usuário'})

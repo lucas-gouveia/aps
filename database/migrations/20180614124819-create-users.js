@@ -1,6 +1,6 @@
 module.exports = {
   up: (queryInterface, DataTypes) => {
-    queryInterface.createTable('Users', {
+    return queryInterface.createTable('Users', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -32,6 +32,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    queryInterface.dropTable('Users');
+    return queryInterface.dropTable('Users');
   }
 };

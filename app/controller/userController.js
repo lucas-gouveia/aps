@@ -16,7 +16,6 @@ export const createUser = async (req, res) => {
     })
     return res.json({ message: 'Usuário Cadastrado!' });
   } catch (error) {
-    console.log(error)
     return res.status(500).json({message: 'Erro ao registrar usuário'})
   }
 }

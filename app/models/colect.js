@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     complement: DataTypes.STRING,
     conclused: DataTypes.BOOLEAN,
     canceled: DataTypes.BOOLEAN,
+    acept: DataTypes.BOOLEAN,
   });
 
   return Colect;

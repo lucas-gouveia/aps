@@ -1,6 +1,6 @@
+require('dotenv').config()
 import express from 'express'
 import bodyParser from 'body-parser'
-require('dotenv').config()
 import { createUser } from './app/controller/userController'
 import { login } from './app/controller/loginController'
 import { verifyToken } from './app/controller/verifyToken'

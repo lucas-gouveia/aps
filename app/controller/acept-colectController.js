@@ -9,7 +9,7 @@ export const aceptColect = async (req, res) => {
         id: identificador.id,
       }
     })
-    if (userId !== colects.dataValues.user_id) {
+    if (userId == colects.dataValues.user_id) {
       return res.status(401).json({ message: 'Não autorizado!' })
     }
     if (colects == null) {
@@ -22,6 +22,7 @@ export const aceptColect = async (req, res) => {
       return res.status(400).json({ message: 'Coleta não pode ser aceita!' })
     }
     colects.acept = true
+    colects.colector_id = userId
     await colects.save()
     return res.json({ message: 'Coleta aceita!' })
   } catch (error) {

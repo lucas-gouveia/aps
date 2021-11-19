@@ -8,6 +8,7 @@ import { createColect } from './app/controller/colectController'
 import { cancelColect } from './app/controller/cancel-colectController'
 import { aceptColect } from './app/controller/acept-colectController'
 import { concluseColect } from './app/controller/consluse-colectController'
+import { listColect } from './app/controller/load-colectController'
 
 const app = express();
 
@@ -24,6 +25,8 @@ app.post('/colect', verifyToken, createColect)
 app.post('/cancel', verifyToken, cancelColect)
 app.post('/acept', verifyToken, aceptColect)
 app.post('/concluse', verifyToken, concluseColect)
+
+app.get('/load', verifyToken, listColect)
 
 console.log('Running on port', process.env.PORT)
 

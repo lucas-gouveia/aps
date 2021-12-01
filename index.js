@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 app.post('/register', createUser)
 app.post('/login', login)
 app.post('/colect', verifyToken, createColect)
-app.post('/cancel', verifyToken, cancelColect)
+app.delete('/cancel/:id', verifyToken, cancelColect)
 app.post('/acept', verifyToken, aceptColect)
 app.post('/concluse', verifyToken, concluseColect)
 

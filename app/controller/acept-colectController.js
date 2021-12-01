@@ -3,7 +3,7 @@ import { Colects } from '../models'
 export const aceptColect = async (req, res) => {
   try {
     const userId = req.userId
-    const identificador = req.body
+    const identificador = req.params
     const colects = await Colects.findOne({
       where: {
         id: identificador.id,

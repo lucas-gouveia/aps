@@ -16,7 +16,7 @@ export const login = async (req, res) => {
           process.env.SECRET,
           { expiresIn: 1440 }
         )
-        return res.json({ token, expiresIn: 1440 })
+        return res.json({ token, expiresIn: 1440, name: database.dataValues.name, email: database.dataValues.email })
       } else {
         return res.status(401).json({ message: 'Credenciais inválidas!' })
       }

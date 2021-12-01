@@ -1,6 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Colect = sequelize.define('Colects', {
     user_id: DataTypes.INTEGER,
+    colector_id: DataTypes.INTEGER,
     description: DataTypes.STRING,
     material: DataTypes.STRING,
     avenue: DataTypes.STRING,

@@ -3,7 +3,7 @@ import { Colects } from '../models'
 export const concluseColect = async (req, res) => {
   try {
     const userId = req.userId
-    const identificador = req.body
+    const identificador = req.params.id
     const colects = await Colects.findOne({
       where: {
         id: identificador.id,

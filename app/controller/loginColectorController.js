@@ -1,11 +1,11 @@
-import { User } from '../models'
+import { Colector } from '../models'
 import { compare } from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
-export const login = async (req, res) => {
+export const loginColector = async (req, res) => {
   try {
     const user = req.body
-    const database = await User.findOne({ where: { email: user.email }})
+    const database = await Colector.findOne({ where: { email: user.email }})
     console.log(database)
     if (!database) {
       return res.status(401).json({ message: 'Credenciais inválidas!' })

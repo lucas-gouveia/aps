@@ -3,10 +3,11 @@ import { Colects } from '../models'
 export const aceptColect = async (req, res) => {
   try {
     const userId = req.userId
-    const identificador = req.body
+    const identificador = req.params.id
+    console.log(identificador)
     const colects = await Colects.findOne({
       where: {
-        id: identificador.id,
+        id: identificador,
       }
     })
     if (userId == colects.dataValues.user_id) {
@@ -26,6 +27,7 @@ export const aceptColect = async (req, res) => {
     await colects.save()
     return res.json({ message: 'Coleta aceita!' })
   } catch (error) {
+    console.log(error)
     return res.status(500).json({ message: 'Erro ao aceitar coleta!' })
   }
 }

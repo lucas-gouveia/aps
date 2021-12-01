@@ -68,15 +68,13 @@ module.exports = {
         type: DataTypes.BOOLEAN,
         defaultValue: false
       },
-      colector_id: {
+      colector_phone: {
         allowNull: true,
-        type: DataTypes.INTEGER,
-        references: {
-          model: "Users",
-          key: "id"
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'RESTRICT'
+        type: DataTypes.STRING,
+      },
+      colector_name: {
+        allowNull: true,
+        type: DataTypes.STRING,
       },
       createdAt: {
         allowNull: false,

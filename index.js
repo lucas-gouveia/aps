@@ -1,6 +1,7 @@
 require('dotenv').config()
 import express from 'express'
 import bodyParser from 'body-parser'
+import cors from 'cors'
 import { createUser } from './app/controller/userController'
 import { login } from './app/controller/loginController'
 import { verifyToken } from './app/controller/verifyToken'
@@ -10,9 +11,11 @@ import { aceptColect } from './app/controller/acept-colectController'
 import { concluseColect } from './app/controller/consluse-colectController'
 import { listColect } from './app/controller/load-colectController'
 
-const app = express();
+const app = express()
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors())
+
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {

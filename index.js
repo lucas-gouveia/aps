@@ -33,4 +33,4 @@ app.get('/load', verifyToken, listColect)
 
 console.log('Running on port', process.env.PORT)
 
-app.listen(process.env.PORT);
+app.listen(process.env.PORT || 3000);
